@@ -11,9 +11,9 @@ interface PageProps {
 }
 
 // This will get the `id` from the dynamic route parameter
-const page = ({ params: { id } }: PageProps) => {
+const page = ({ params }: PageProps) => {
     // Filter the products array based on the `id` passed in the URL
-    const product = products.find((product) => product.id === parseInt(id));
+    const product = products.find((product) => product.id === parseInt(params.id));
 
     return (
         <div className='mx-auto'>
