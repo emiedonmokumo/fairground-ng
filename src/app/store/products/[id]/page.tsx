@@ -4,16 +4,10 @@ import formatPrice from '@/utils/formatPrice';
 import PriceHistoryChart from '@/components/Store/PriceHistoryChart';
 import BusinessCard from '@/components/Store/BusinessCard';
 
-interface PageProps {
-    params: {
-        id: string;
-    };
-}
-
 // This will get the `id` from the dynamic route parameter
-const page = ({ params }: PageProps) => {
+const page = ({ params: { id } }: { params: any }) => {
     // Filter the products array based on the `id` passed in the URL
-    const product = products.find((product) => product.id === parseInt(params.id));
+    const product = products.find((product) => product.id === parseInt(id));
 
     return (
         <div className='mx-auto'>
